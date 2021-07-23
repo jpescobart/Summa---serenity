@@ -15,6 +15,7 @@ public class YourlogoSteps extends PageObject {
 	PaginaInicial paginaInicial;
 	LoginPage loginPage;
 	IngresarDatosFormulario ingresarDatosFormulario;
+
 	MyAccount myAccount;
 	
 	@Step
