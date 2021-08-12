@@ -1,12 +1,37 @@
 #Author: hamtont@gmail.com
 @tag
-Feature: Automation practice crear usuario
+Feature: Cracion de novedades ocasionales y fijas para un colaborador registrado.
  
 
-  @tag1
-  Scenario: Crear usuario para verificar boleto de credito en la web yourlogo
-    Given que el usuario desee crear una cuenta en la web
-    When el usuario ingresa sus datos para la creacion
-      | email               | firsname | lastname | pdw    | day   | month | year | addressname | adresslast | company | address    | city  | state   | postalcod | mobile |alias|
-      | juaguttgd6677@tinton.com | juan     | valdez   | 123456 |  15   | June  | 2000 | luiz        | lopez      | sofka   | circular11 | miami | Florida |     05000 | 45789  |taba |
-    Then el debera visualizar mensaje "You have not received any credit slips."
+    @Novedades @Ocasionales
+      Scenario: Verificar que se permita crear una novedad ocasional para un cliente en especifico
+      Given  que  ingreso al portal de novedades de Summa
+      When   seleccion un cliente e ingresos todos los datos para una novedad ocasional
+      Then   el sistema permite enviar la novedad generada correctamente
+
+  @Novedades @Fijas
+  Scenario: Verificar que se permita crear una novedad fija para un cliente en especifico
+    Given  que  ingreso al portal de novedades de Summa
+    When   seleccion un cliente e ingresos todos los datos para una novedad fija
+    Then   el sistema permite enviar la novedad generada correctamente
+
+  @Novedades @FijasEpeciales
+  Scenario Outline: Verificar que se permita crear una novedad fija especial para un cliente en especifico
+    Given  que  ingreso al portal de novedades de Summa
+    When   seleccion un cliente e ingresos todos los datos para una novedad fija especial con "<accion>"
+    Then   el sistema permite enviar la novedad generada correctamente
+    Examples:
+    |      accion   |
+    |        1      |
+    |        2      |
+    |        3      |
+    |        4      |
+    |        5      |
+
+
+  @Novedades @FijasEspeciales
+  Scenario: Verificar que se permita crear varias novedades fijas especiales para un cliente en especifico
+    Given  que  ingreso al portal de novedades de Summa
+    When   seleccion un cliente e ingresos todos los datos para una novedad fija especial
+    And    genero varias novedades espciales
+    Then   el sistema permite enviar las novedades generadas correctamente
