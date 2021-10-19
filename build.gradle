@@ -34,8 +34,7 @@ compile group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '2.0.70
 compile group: 'net.serenity-bdd', name: 'serenity-cucumber', version: '1.9.30'
 compile'org.slf4j:slf4j-simple:1.7.7'
 compile 'junit:junit:4.12'
-
-
+compile group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
 
 }
 

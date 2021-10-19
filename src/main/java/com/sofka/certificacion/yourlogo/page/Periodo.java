@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class Periodo extends PageObject {
 
-    @FindBy(id = "period-6")
+    @FindBy(id = "period-7")
     WebElementFacade seleccionarPeriodo;
 
     public  void SeleccionarPeriodoEspecifico(){
